@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { PanchangaData, PANCHANGA_LISTS } from './types';
-import PosterTemplate from './components/PosterTemplate';
 import { Loader2, RefreshCw, Download, Languages, Edit3, UserCircle } from 'lucide-react';
 
 declare var html2canvas: any;
