@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { PanchangaData, PANCHANGA_LISTS } from './types';
-import { fetchPanchangaFromAI } from './services/geminiService';
 import PosterTemplate from './components/PosterTemplate';
 import { Loader2, RefreshCw, Download, Languages, Edit3, UserCircle } from 'lucide-react';
 
@@ -35,14 +34,15 @@ const App: React.FC = () => {
   const [downloading, setDownloading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
 
-  const handleFetchData = async () => {
-    setLoading(true);
-    const aiData = await fetchPanchangaFromAI(selectedDate, data.language);
-    if (aiData) {
-      setData({ ...aiData, language: data.language });
-    }
-    setLoading(false);
-  };
+ const handleFetchData = async () => {
+  setLoading(true);
+  const aiData = await fetchPanchangaFromAI(selectedDate, data.language);
+  if (aiData) {
+    setData({ ...aiData, language: data.language });
+  }
+  setLoading(false);
+};
+
 
   const updateField = (field: keyof PanchangaData, value: any) => {
     setData(prev => ({ ...prev, [field]: value }));
