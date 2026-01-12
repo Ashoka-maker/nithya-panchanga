@@ -1,0 +1,5 @@
+{
+  "name": "Nithya Panchanga Poster Maker",
+  "description": "A specialized tool for astrologers to generate daily Telugu Panchanga posters with ease. Features automated Gemini-powered data fetching and a beautiful customizable poster template.",
+  "requestFramePermissions": []
+}
